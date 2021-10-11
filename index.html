@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    
+       <!-- for the map-->
+       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+       <link rel="stylesheet" href="assets/style.css">
+       <title>Camp in the South-East</title>
+</head>
+
+<body>
+    <header>
+        <h1>Explore Camping Near You</h1>
+        <a id=lastPark href="assets/CampsitePage.html"> Previous Search: appears only when local storage has a value</a>
+    </header>
+
+    <main>
+        <div class="dropdown is-active">
+            <div class="dropdown-trigger">
+                <button id="button" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Visiting State</span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content" id="showMe">
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="Alabama">
+                        Alabama
+                    </a>
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="Florida">
+                        Florida
+                    </a>
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="Georgia">
+                        Georgia
+                    </a>
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="Mississippi">
+                        Mississippi
+                    </a>
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="NorthCarolina">
+                        North Carolina
+                    </a>
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="SouthCarolina">
+                        South Carolina
+                    </a>
+                    <a href="assets/CampsitePage.html" class="dropdown-item" id="Tennessee">
+                        Tennessee
+                    </a>
+
+                </div>
+            </div>
+        </div>
+      
+        <br />
+        <input type="text" id="zip" placeholder="Enter Your zip code here">
+        <br/>
+
+        <img src="assets/south_east_usa.png" alt="this is a map of the 7 states alond with red dots of where their campsites are located">
+
+    <!-- Google Map -->
+        
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <h1>How Do I Get There</h1>
+                <p>Find out your travel distance below</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="from" class="col-xs-2 control-label"></label>
+                        <div class="col-xs-4">
+                            <input type="text" id="from" placeholder="Origin" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="to-group">
+                    <label for="from" class="col-xs-2 control-label"></label>
+                        <div class="col-xs-4">
+                        <input type="text" id="to" placeholder="Destination" class="form-control">
+                        </div>
+                    </div>
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button class="btn btn-info btn-lg" id="submitButton"><i class="far fa-dot-circle"></i></button>
+                </div>
+                </form>
+            </div>
+
+            <div>
+                <div id="map"></div>
+                <div id="output"></div>
+            </div>
+           </div>
+        </div><!--Jumbotron--> 
+
+        <!--google maps key link & link to js stylesheet-->
+        
+            
+
+    </main>
+    <footer>
+        <h2>Contact Us:</h2>
+        <p>email: support@campSouthEast.com</p>
+        <p>phone: 1-234-567-8900</p>
+    </footer>
+
+
+    <script async defer src="MapAPI.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlZ9ANHVNcuK4fpL1P2VfCd-XrULmDGtY&libraries=places&callback=initMap"> </script>
+</body>
+
+</html>
